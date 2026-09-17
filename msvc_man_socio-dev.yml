@@ -2,12 +2,6 @@ server:
   port: ${PORT_MAN_SOCIO:8092}
 
 spring:
-  cloud:
-    config:
-      uri: ${CONFIG_SERVER_CONF_URI}
-      profile: ${CONFIG_SERVER_PROFILE}
-      enabled: true
-
   data:
     mongodb:
       uri: ${BD_MONGO_URL}
@@ -17,4 +11,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICE_URL}
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL:http://localhost:8761/eureka}
