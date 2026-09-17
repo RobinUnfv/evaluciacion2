@@ -12,7 +12,7 @@ spring:
               predicates:
                 - Path=/api/cliente/**
             - id: socios
-              uri: lb://msvc_man_socio
+              uri: lb://msvc-man-socio
               predicates:
                 - Path=/api/socio/**
     loadbalancer:
