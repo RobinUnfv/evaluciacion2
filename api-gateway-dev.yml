@@ -3,14 +3,17 @@ server:
 
 spring:
   cloud:
-    config:
-      uri: ${CONFIG_SERVER_CONF_URI}
-      profile: ${CONFIG_SERVER_PROFILE}
-      enabled: true
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICE_URL}
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: clientes
+              uri: lb://msvc-cliente
+              predicates:
+                - Path=/api/cliente/**
+            - id: socios
+              uri: lb://msvc_man_socio
+              predicates:
+                - Path=/api/socio/**
+    loadbalancer:
+      configurations: default
