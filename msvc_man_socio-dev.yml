@@ -2,9 +2,8 @@ server:
   port: ${PORT_MAN_SOCIO:8092}
 
 spring:
-  data:
-    mongodb:
-      uri: ${BD_MONGO_URL}
+  mongodb:
+    uri: ${BD_MONGO_URL}
 
 eureka:
   client:
