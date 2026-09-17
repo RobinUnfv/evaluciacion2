@@ -7,6 +7,20 @@ spring:
       uri: ${CONFIG_SERVER_CONF_URI}
       profile: ${CONFIG_SERVER_PROFILE}
       enabled: true
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: clientes
+              uri: lb://msvc-cliente
+              predicates:
+                - Path=/api/cliente/**
+            - id: socios
+              uri: lb://msvc_man_socio
+              predicates:
+                - Path=/api/socio/**
+    loadbalancer:
+      configurations: default
 
 eureka:
   client:
