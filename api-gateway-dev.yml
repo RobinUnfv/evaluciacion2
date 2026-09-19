@@ -18,6 +18,6 @@ spring:
             - id: historial
               uri: lb://msvc-historial
               predicates:
-                - Path=//api/historial/socio/**
+                - Path=/api/historial/socio/**
     loadbalancer:
       configurations: default
