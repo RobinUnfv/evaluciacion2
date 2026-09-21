@@ -7,7 +7,7 @@ spring:
       client:
         provider:
           cjava-realm:
-            issuer-uri: http://localhost:8080/realms/cjava-realm
+            issuer-uri: http://keycloak:8080/realms/cjava-realm
         registration:
           cjava-realm:
             provider: cjava-realm
@@ -16,7 +16,7 @@ spring:
             client-secret: E433SCWrlQXLWj9ibM8pdew1cQfT7p3S
             scope: openid
             authorization-grant-type: authorization_code
-            redirect-uri: http://client-keycloak:9099/login/oauth2/code/cjava-realm
+            redirect-uri: http://localhost:9099/login/oauth2/code/cjava-realm
 
 eureka:
   client:
