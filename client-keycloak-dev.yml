@@ -1,6 +1,22 @@
 server:
   port: ${PORT_CLIENT_KEYCLO:9099}
 
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          cjava-realm:
+            issuer-uri: http://localhost:8080/realms/cjava-realm
+        registration:
+          cjava-realm:
+            provider: cjava-realm
+            client-name: Cjava Client de keycloak
+            client-id: cjava-client
+            client-secret: 3GHfaaVyZpbngXL7fZ8xbIQx48Z2ufyq
+            scope: openid
+            authorization-grant-type: authorization_code
+
 eureka:
   client:
     register-with-eureka: true
