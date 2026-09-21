@@ -1,0 +1,22 @@
+server:
+  port: ${PORT_MSVC_HIST:8095}
+
+spring:
+  datasource:
+    url: ${BD_HIST_URL}
+    username: ${BD_HIST_USERNAME}
+    password: ${BD_HIST_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+         dialect: org.hibernate.dialect.MySQLDialect
+         format_sql: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL:http://localhost:8761/eureka}
