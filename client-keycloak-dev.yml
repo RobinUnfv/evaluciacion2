@@ -13,7 +13,7 @@ spring:
             provider: cjava-realm
             client-name: Cjava Client de keycloak
             client-id: cjava-client
-            client-secret: 3GHfaaVyZpbngXL7fZ8xbIQx48Z2ufyq
+            client-secret: E433SCWrlQXLWj9ibM8pdew1cQfT7p3S
             scope: openid
             authorization-grant-type: authorization_code
 
