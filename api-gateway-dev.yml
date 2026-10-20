@@ -7,6 +7,10 @@ spring:
       server:
         webflux:
           routes:
+            - id: oauth2
+              uri: lb://msvc-oauth
+              predicates:
+                - Path=/api/security/**
             - id: clientes
               uri: lb://msvc-cliente
               predicates:
