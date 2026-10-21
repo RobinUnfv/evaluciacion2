@@ -7,6 +7,7 @@ spring:
       resourceserver:
         jwt:
           issuer-url: http://msvc-oauth:9100
+          jwk-set-uri: http://msvc-oauth:9100/oauth2/jwks
       client:
         registration:
           client-app:
