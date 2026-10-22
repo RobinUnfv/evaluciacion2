@@ -20,7 +20,12 @@ spring:
             client-name: client-app
         provider:
           spring:
-            issuer-uri: http://msvc-oauth:9100
+            # SIN issuer-uri: asi el gateway NO llama a msvc-oauth al arrancar
+            authorization-uri: http://127.0.0.1:9100/oauth2/authorize
+            token-uri: http://msvc-oauth:9100/oauth2/token
+            jwk-set-uri: http://msvc-oauth:9100/oauth2/jwks
+            user-info-uri: http://msvc-oauth:9100/userinfo
+            user-name-attribute: sub
 
   cloud:
     gateway:
